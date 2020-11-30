@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Lançamento de notas</title>
+</head>
+
+
+<style>
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+}
+
+.form-control{
+    max-height: 40px;
+    max-width: 400px;
+}
+    
+#form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+    
+}    
+
+#operacao{
+    position:absolute;
+right:645px;
+width:80px;
+bottom: 200px;
+
+
+    
+}
+
+  
+</style>
+
+<body>
+
+    <h1>Lançamento de notas</h1>
+
+    <form name="calculadora" method="POST" id="form">
+
+    <div>
+        <label for="nota1">Nota 1 : </label>
+        <input type="text" id="nota1" name="nota1" class="form-control" placeholder="Nota 1" />
+    </div>
+    <div>
+        <label for="nota2">Nota 2 : </label>
+        <input type="text" id="nota2" name="nota2" class="form-control" placeholder="Nota 2" />
+    </div>
+    <div>
+
+        <label for="nota3">Nota 3 : </label>
+        <input type="text" id="nota3" name="nota3" class="form-control" placeholder="Nota 3" />
+    </div>
+    <div>
+
+        <label for="media">Média : </label>
+        <input type="text" id="media" name="media" class="form-control" placeholder="Média" readonly="true"/>
+    </div>
+    <div>
+        
+    <input type="button" id="operacao" name="operacao" class="btn btn-success" value="Média" onclick="calculo()" />
+
+    </div>
+
+</form>
+
+    <script>
+
+        function calculo(){
+
+            var nota1 = parseInt(document.getElementById("nota1").value);
+            var nota2 = parseInt(document.getElementById("nota2").value);
+            var nota3 = parseInt(document.getElementById("nota3").value);
+            var media = parseInt(nota1) + parseInt(nota2) + parseInt(nota3);
+            var total = media / 3;
+
+            document.getElementById("media").value = total;
+
+            
+            if(total >= 6){
+                alert("Aprovado");
+            }else if(total < 6){
+                alert("Reprovado");
+            }
+
+        }
+        
+
+
+
+    </script>
+
+
+</body>
+
+</html>
